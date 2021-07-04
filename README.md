@@ -1,5 +1,5 @@
 # Immofind
-Crawl your favorite place to life padre!
+Crawl your favorite place to live padre!
 
 **Installation**  
 ``` 
