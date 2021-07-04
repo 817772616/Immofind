@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Immofind</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <style>
+        .column {border: 1px solid #ddd;}
+        h1 {text-align: center; font-size: 1.5rem !important; border-bottom: 1px solid #ddd; paddding: 2rem 0;}
+        h1 img {width: 50%;}
+    </style>
+</head>
+
+<body>
+<section class="section">
+    <div class="columns">
+        <div class="column">
+            <h1 class="title">
+                <img src="https://www.ebay-kleinanzeigen.de/static/img/common/logo/logo-ebayk-402x80.hsn0x4ev0qi.png">
+            </h1>
+            <table class="table">
+                {% for e in data['ebay'] %}
+                    <tr>
+                        <td>
+                            <img src="{{ e['image'] }}">
+                        </td>
+                        <td>
+                            <a href="{{ e['url'] }}" target="_blank">{{ e['title'] }}</a></td>
+                        <td>
+                            {% if e['price'] | int > max %}
+                            <b style="color: red;">{{ e['price'] }} &euro;</b>
+                            {% elif e['price'] | int < max/2 %}
+                            <b style="color: lightgreen;">{{ e['price'] }} &euro;</b>
+                            {% else %}
+                            <b style="color: green;">{{ e['price'] }} &euro;</b>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="column">
+            <h1 class="title">
+                <img src="https://www.wg-gesucht.de/img/wg-gesucht-logo.png">
+            </h1>
+            <table class="table">
+                {% for e in data['wgg'] %}
+                    <tr>
+                        <td>
+                            <img src="{{ e['image'] }}">
+                        </td>
+                        <td>
+                            <a href="{{ e['url'] }}" target="_blank">{{ e['title'] }}</a></td>
+                        <td>
+                            {% if e['price'] | int > max %}
+                            <b style="color: red;">{{ e['price'] }} &euro;</b>
+                            {% elif e['price'] | int < max/2 %}
+                            <b style="color: lightgreen;">{{ e['price'] }} &euro;</b>
+                            {% else %}
+                            <b style="color: green;">{{ e['price'] }} &euro;</b>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="column">
+            <h1 class="title">
+                <img src="https://www.meinestadt.de/site/meinestadt/get/params_E-1440960530_Dattachment/7168938/logo_sommer_desktop_final.svg">
+            </h1>
+            <table class="table">
+                {% for e in data['ms'] %}
+                    <tr>
+                        <td>
+                            <img src="{{ e['image'] }}">
+                        </td>
+                        <td>
+                            <a href="{{ e['url'] }}" target="_blank">{{ e['title'] }}</a></td>
+                        <td>
+                            {% if e['price'] | int > max %}
+                            <b style="color: red;">{{ e['price'] }} &euro;</b>
+                            {% elif e['price'] | int < max/2 %}
+                            <b style="color: lightgreen;">{{ e['price'] }} &euro;</b>
+                            {% else %}
+                            <b style="color: green;">{{ e['price'] }} &euro;</b>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="column">
+            <h1 class="title">
+                <img src="https://cdnglobal.immowelt.org/global-assets/4.3.0/legacy/0/images/logo_immowelt.svg">
+            </h1>
+            <table class="table">
+                {% for e in data['iw'] %}
+                    <tr>
+                        <td>
+                            <img src="{{ e['image'] }}">
+                        </td>
+                        <td>
+                            <a href="{{ e['url'] }}" target="_blank">{{ e['title'] }}</a></td>
+                        <td>
+                            {% if e['price'] | int > max %}
+                            <b style="color: red;">{{ e['price'] }} &euro;</b>
+                            {% elif e['price'] | int < max/2 %}
+                            <b style="color: lightgreen;">{{ e['price'] }} &euro;</b>
+                            {% else %}
+                            <b style="color: green;">{{ e['price'] }} &euro;</b>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="column">
+            <h1 class="title">
+                <img src="https://resources.nestimg.com/nestoria/img/nestoria_blue_200-min.png">
+            </h1>
+            <table class="table">
+                {% for e in data['nest'] %}
+                    <tr>
+                        <td>
+                            <img src="{{ e['image'] }}">
+                        </td>
+                        <td>
+                            <a href="{{ e['url'] }}" target="_blank">{{ e['title'] }}</a></td>
+                        <td>
+                            {% if e['price'] | int > max %}
+                            <b style="color: red;">{{ e['price'] }} &euro;</b>
+                            {% elif e['price'] | int < max/2 %}
+                            <b style="color: lightgreen;">{{ e['price'] }} &euro;</b>
+                            {% else %}
+                            <b style="color: green;">{{ e['price'] }} &euro;</b>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</section>
+</body>
+</html>
